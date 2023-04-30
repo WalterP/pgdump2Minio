@@ -2,7 +2,15 @@
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/vpontus/pgdump2minio)
 
-This image will help you to perform postgres backup, upload to minio storage and validate restore
+This Docker image simplifies the process of backing up a PostgreSQL database and storing the backup on an S3-compatible storage, like Minio. It supports various configuration options and can also verify the backup if desired.
+
+## Features:
+
+* Compatible with PostgreSQL databases
+* Supports custom pg_dump and pg_restore options
+* Backup verification option
+* Minio S3-compatible storage support
+* Configurable via environment variables
 
 ## Configuration
 
@@ -14,7 +22,7 @@ PGHOST|localhost| postgresql host
 PGPORT|5432| postgresql port
 PGDATABASE|test|database name to backup
 PGUSER|test| postgres connection user
-PGPASSWORD|test| postgres connection pasword
+PGPASSWORD|test| postgres connection password
 PGDUMP_OPTIONS| -Fc -b| pg_dump options
 PGRESTORE_OPTIONS|| pg_restore options
 VERIFY_BACKUP|skip| database verification flag. Use **verify** to enable DB verification.
